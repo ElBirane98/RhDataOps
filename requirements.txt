@@ -2,3 +2,6 @@ dbt-duckdb
 duckdb
 numpy
 pandas
+dagster
+dagster-webserver
+dagster-dbt
