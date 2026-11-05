@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: dim_employees
+    description: "Table de dimension des employés"
+    columns:
+      - name: employee_id
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_hr_metrics
+    description: "Table de faits avec les métriques RH (turnover, salaire, etc.)"
+    columns:
+      - name: employee_id
+        tests:
+          - unique
+          - not_null
+      - name: has_left
+        tests:
+          - accepted_values:
+              values: [0, 1]

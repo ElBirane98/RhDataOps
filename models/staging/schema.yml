@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: stg_employees
+    description: "Employés nettoyés et standardisés depuis la couche Bronze"
+    columns:
+      - name: employee_id
+        description: "Identifiant unique de l'employé"
+        tests:
+          - unique
+          - not_null
+      - name: attrition
+        description: "L'employé a-t-il quitté l'entreprise ? (Yes/No)"
+        tests:
+          - accepted_values:
+              values: ['Yes', 'No']
+      - name: department
+        tests:
+          - not_null
+      - name: monthly_income
+        tests:
+          - not_null
