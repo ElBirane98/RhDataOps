@@ -2,6 +2,8 @@ version: 2
 
 sources:
   - name: bronze
-    schema: bronze
+    description: "Données brutes stockées sur MinIO (S3)"
     tables:
       - name: employees_raw
+        # On indique à dbt le chemin exact du fichier sur MinIO
+        external_location: "s3://rhops-data/employees.csv"

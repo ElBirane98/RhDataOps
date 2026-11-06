@@ -14,6 +14,11 @@ Pipeline de données de bout en bout (End-to-End) construit pour analyser les do
 
 \- \*\*Gold\*\* : Modélisation en étoile (table de dimension `dim\_employees` et table de faits `fct\_hr\_metrics`).
 
+- **Stockage Objet (Data Lake)** : MinIO (compatible S3) pour stocker les fichiers bruts.
+- **Ingestion** : Python (lit depuis MinIO ou localement selon l'environnement).
+- **Transformation** : dbt + DuckDB (Architecture Medallion).
+...
+
 
 
 \## 🛠️ Stack Technique

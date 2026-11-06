@@ -36,8 +36,10 @@ jobs:
           echo "      path: dev.duckdb" >> ~/.dbt/profiles.yml
           echo "      threads: 1" >> ~/.dbt/profiles.yml
 
-      - name: Lancer l'ingestion Bronze
+     - name: Lancer l'ingestion Bronze
         run: python ingest/bronze.py
+        env:
+          USE_MINIO: 'false'  # <--- Ajoute ces 2 lignes
 
       - name: Lancer dbt build (Run + Tests)
         run: dbt build
